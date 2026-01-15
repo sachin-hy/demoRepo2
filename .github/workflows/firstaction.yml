@@ -1,0 +1,13 @@
+name: first file
+
+on: [push]
+
+jobs:
+  first_job_id:
+     runs_on: ubuntu_latest
+     steps:
+        - name: download file
+          users: actions/workflows@v4
+          run: |
+           echo "first run command"
+     
