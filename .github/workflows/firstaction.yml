@@ -18,7 +18,7 @@ jobs:
 
       - name: Run command
         run: |
-          if [ -f "pom.xml" ]; then
+          if [ -f "Main.java" ]; then
             echo "Print Java version"
             java -version
             javac Main.java
