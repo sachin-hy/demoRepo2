@@ -18,7 +18,11 @@ jobs:
 
       - name: Run command
         run: |
-          echo "Print Java version"
-          java -version
-          javac Main.java
-          java Main
+          if [ -f "pom.xml" ]; then
+            echo "Print Java version"
+            java -version
+            javac Main.java
+            java Main
+          else
+            echo "File not present"
+          fi
