@@ -9,12 +9,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: create file command
+        run: |
+         echo "creatring file"
+         touch build-report.txt
       - name: to save file in repo
         uses: actions/upload-artifact@v4
-      - name: Run command
-        run: |
-          echo "creatring file"
-          touch build-report.txt
+        with:
+            name: build-report
+            path: .
+     
       # - name: Setup Java
       #   uses: actions/setup-java@v4
       #   with:
