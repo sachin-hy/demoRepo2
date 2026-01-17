@@ -7,17 +7,25 @@ jobs:
     name: first job
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: create file command
-        run: |
-         echo "creatring file"
-         touch build-report.txt
-      - name: to save file in repo
-        uses: actions/upload-artifact@v4
-        with:
-            name: build-report
-            path: .
+        - name: store passsword
+          env:
+             MY_PASSWORD: ${{ secrets.MY_DB_PASSWORD }}
+          run: |
+            echo "I will show my db passsword "
+            echo "This is my password : $MY_PASSWORD"
+
+            
+      # - name: Checkout repository
+      #   uses: actions/checkout@v4
+      # - name: create file command
+      #   run: |
+      #    echo "creatring file"
+      #    touch build-report.txt
+      # - name: to save file in repo
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #       name: build-report
+      #       path: .
      
       # - name: Setup Java
       #   uses: actions/setup-java@v4
